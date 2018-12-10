@@ -1,0 +1,80 @@
+﻿@model AirportAssignmentTest.Models.Airplane
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Airplane</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AirplaneType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AirplaneType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Airport.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Airport.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoPilot.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoPilot.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pilot.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pilot.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxNumOfPassangers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxNumOfPassangers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeInMeter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeInMeter)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

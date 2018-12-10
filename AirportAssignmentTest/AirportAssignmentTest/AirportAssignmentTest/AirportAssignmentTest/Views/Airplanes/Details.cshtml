@@ -1,0 +1,74 @@
+﻿@model AirportAssignmentTest.Models.Airplane
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Airplane</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AirplaneType.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AirplaneType.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Airport.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Airport.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoPilot.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoPilot.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pilot.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pilot.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxNumOfPassangers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxNumOfPassangers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeInMeter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeInMeter)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

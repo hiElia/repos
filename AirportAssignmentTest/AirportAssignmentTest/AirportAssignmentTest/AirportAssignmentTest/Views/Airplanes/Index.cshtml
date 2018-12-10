@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AirportAssignmentTest.Models.Airplane>
+
+@{
+    ViewBag.Title = "Airplane";
+}
+
+<br />
+<img class="img-responsive" id="my-logo" src= https://erau.edu/Images/University/sky-high/plane.png = alt="no image" width="300" height="200" />
+
+
+
+
+
+<h2>Airplane</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AirplaneType.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Airport.Name)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.CoPilot.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pilot.Name)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxNumOfPassangers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeInMeter)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirplaneType.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Airport.Name)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.CoPilot.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pilot.Name)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxNumOfPassangers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeInMeter)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

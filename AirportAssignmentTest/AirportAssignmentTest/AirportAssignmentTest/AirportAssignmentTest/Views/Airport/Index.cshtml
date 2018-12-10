@@ -1,0 +1,238 @@
+﻿
+@model AirportAssignmentTest.Views.AirportIndexData
+    <br />
+
+<img class="img-responsive" id="my-logo" src=https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/S15GBCm/cartoon-air-plane-flying-above-the-clouds-you-can-easy-to-put-your-logo-on-the-airplane-airplane-flying-over-blue-sky-with-space-for-your-logo-or-text-seamless-loop-full-hd-and-4k_st2s0fjqe_thumbnail-full01.png = alt="no image" width="200" height="150" />
+
+
+
+@*<img class="img-responsive" id="my-logo" src=https://i.pinimg.com/564x/a6/87/22/a687229348f550015273c1c516be25ac--airports-transportation.jpg = alt="no image" width="150" height="150" />*@
+
+
+@{
+    ViewBag.Title = "Airports";
+}
+@*<link href="~/Content/StyleSheet1.css" rel="stylesheet" />*@
+<h2>Airports</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>City </th>
+
+        <th></th>
+        <th></th>
+    </tr>
+   
+            @foreach (var item in Model.Airports)
+            {
+
+                string selectedRow = "";
+                if (item.Id == ViewBag.AirportId)
+                {
+                    selectedRow = "success";
+                }
+                <tr class="@selectedRow" valign="top">
+                    <StaticMenuStyle CssClass="MenuStyle"/>
+                   
+                    <td>
+                       
+
+                        @*<StaticHoverStyle Font-Bold="true" />*@
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @*<link href="~/Content/StyleSheet1.css" rel="stylesheet" />*@
+                       
+                        @*<StaticSelectedStyle BackColor="Red" />*@
+                        @Html.ActionLink("Select", "Index", new { id = item.Id })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+</table>
+@if (Model.Airplanes != null)
+{
+    
+    <h3 style="color:black;">Current planes located at  the selected Airport</h3>
+    <body style="background-color:transparent;">            
+
+    </body>
+    
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Id </th>
+            <th>Name </th>
+            <th>Maximum number of passangers </th>
+            <th>Size in meter</th>
+            <th> AirportId</th>
+            <th> Airplane Type </th>
+            <th>Pilot </th>
+            <th>CoPilot </th>
+
+        </tr>
+
+        @foreach (var item in Model.Airplanes)
+        {
+            string selectedRow = "";
+            if (item.Id == ViewBag.AirplaneId)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.ActionLink("Select", "Index", new { airplaneId = item.Id })
+                </td>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.MaxNumOfPassangers
+                </td>
+                <td>
+                    @item.SizeInMeter
+                </td>
+                <td>
+                    @item.AirportId
+                </td>
+                <td>
+                    @item.AirplaneType
+                </td>
+                <td>
+                    @item.Pilot
+                </td>
+                <td>
+                    @item.CoPilot
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+
+}
+ 
+@if (ViewBag.AirPlaneId != null)
+{
+    @*<form action="/" method="post">*@
+        <form method="post" action="/airport/TransferAirPlane">
+            
+           
+            <h3 style="color:black;">The selected plane goes to the  Airport</h3>
+            <input type="hidden" name="AirPlaneId" value="@ViewBag.AirPlaneId" />
+            @{
+
+                var Airports = new List<SelectListItem>
+                    (){
+new SelectListItem(){Value="1",Text="Bole International Airport"},
+new SelectListItem(){Value="2",Text="LandveteInternational Airportr"},
+new SelectListItem(){Value="3",Text="Heathrow International Airport"},
+new SelectListItem(){Value="9",Text="Arlanda International Airport"},
+new SelectListItem(){Value="10",Text="JFK International Airport"},
+new SelectListItem(){Value="11",Text="Los Angeles International Airport"},
+new SelectListItem(){Value="12",Text="Säve International Airport"}
+
+
+
+
+};
+                @Html.Label("Airport")
+                <br/>
+
+                @Html.DropDownList("AirportId", ViewBag.AirportsToTransferTo as SelectList)
+                <br/>
+                
+                <input type= "submit" value= "Submit" />
+
+
+            }
+        </form>
+        @*@foreach (var item in Model.Airports)
+            {
+                <td>
+                    @Html.ActionLink("Confirm",
+               "ConfirmTransfer", new { id = item.Id },
+             new { onclick = "return confirm('Do you  want to confirm the transfer " + "?')" })
+                </td>
+
+            }*@
+
+
+
+        }
+
+
+
+        @*@if (Model.Airplanes != null)
+            {
+                <h4>The select plane goes to the  Airport</h4>
+                <table class="table">
+                    <tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>City </th>
+
+                        <th></th>
+                        <th></th>
+
+                    </tr>
+                    @foreach (var item in Model.Airports)
+                    {
+
+                        string selectedRow = "";
+                        if (item.Id == ViewBag.AirplaneId)
+                        {
+                            selectedRow = "success";
+                        }
+                        <tr class="@selectedRow">
+                            <td>
+                                    @Html.ActionLink("Select", "Index", new { airportId = item.Id })
+                                </td>
+
+
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.City
+                            </td>
+                            <td>
+                                </tr>
+
+
+
+
+
+                                }
+
+
+
+
+
+
+
+
+
+
+                    </table>*@
+
+
+
+
+
+
+
