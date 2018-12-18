@@ -1,0 +1,13 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=elias1;AccountKey=nBJQSYiLPzLEFb/otFlsvz8gZmu2zWia1BuCGnLtK4BEaHD0SP27OnbLjOVzwUaX3SGBxz4rYpnb/1BWWcwTXw==;BlobEndpoint=https://elias1.blob.core.windows.net/;TableEndpoint=https://elias1.table.core.windows.net/;QueueEndpoint=https://elias1.queue.core.windows.net/;FileEndpoint=https://elias1.file.core.windows.net/",
+    "AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=elias1;AccountKey=nBJQSYiLPzLEFb/otFlsvz8gZmu2zWia1BuCGnLtK4BEaHD0SP27OnbLjOVzwUaX3SGBxz4rYpnb/1BWWcwTXw==;BlobEndpoint=https://elias1.blob.core.windows.net/;TableEndpoint=https://elias1.table.core.windows.net/;QueueEndpoint=https://elias1.queue.core.windows.net/;FileEndpoint=https://elias1.file.core.windows.net/",
+    "ClientId": "71c8e2ac-78d8-4f88-a76f-af3d911e3de3",
+    "sharepointurl": "https://folkis2017.sharepoint.com/sites/elias",
+    "ThumbPrint": "09BC5A0EFF4F3A85234401EE7B64FEF7A73EE608",
+
+      "tenant" : "folkis2017.onmicrosoft.com"
+
+  }
+}
