@@ -1,0 +1,7 @@
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\obj\Debug\myVendingMachineProject.csprojResolveAssemblyReference.cache
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\obj\Debug\myVendingMachineProject.csproj.CoreCompileInputs.cache
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\bin\Debug\myVendingMachineProject.exe.config
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\bin\Debug\myVendingMachineProject.exe
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\bin\Debug\myVendingMachineProject.pdb
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\obj\Debug\myVendingMachineProject.exe
+c:\users\elias\source\repos\myVendingMachineProject\myVendingMachineProject\obj\Debug\myVendingMachineProject.pdb

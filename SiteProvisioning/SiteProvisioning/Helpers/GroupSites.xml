@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pnp:ProvisioningTemplate ID="CountryStuff" Version="1.0"
+      xmlns:pnp="http://schemas.dev.office.com/PnP/2018/01/ProvisioningSchema">
+  <pnp:SiteFields>
+
+    <Field ID="{50861511-CDFC-437A-8C7C-B054DFE57DB4}" Type="Note" DisplayName="DocumentType_0" StaticName="SA_DocType" Name="SA_DocumentTypeHid"  ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+    <Field ID="{CA74B1D1-5BB5-4433-ADAA-4BE7FA81D330}"
+
+          Type="TaxonomyFieldType"
+
+          DisplayName="DocumentType"
+
+          Name="DAA_DocumentType7"
+
+          StaticName="DAA_DocumentType7"
+
+          ShowField="Term1033"
+
+          Required="FALSE"
+          EnforceUniqueValues="FALSE"
+          Group="Elias Fields" >
+      <Customization>
+
+        <ArrayOfProperty>
+
+          <Property>
+
+            <Name>SspId</Name>
+
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>TermSetId</Name>
+
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:NewDocG:DocumentType}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>TextField</Name>
+
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">50861511-CDFC-437A-8C7C-B054DFE57DB4</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>IsPathRendered</Name>
+
+            <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>IsKeyword</Name>
+
+            <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+
+          </Property>
+
+        </ArrayOfProperty>
+
+      </Customization>
+    </Field>
+
+
+    <Field ID="{79251DA3-444D-4339-BB10-A890390AF888}" Type="Text" InternalName="DAA_Owner"  DisplayName="Owner" Name="Owner" Group="NewDocG"  />
+    <Field ID="{56E8D9F9-4EEC-4B54-BD65-63F665099358}" Type= "Choice" InternalName="SA_Secrecy" DisplayName="Secrecy" Name="Secrecy" Format="Dropdown" Group="NewDocG">
+      <Default>Secret</Default>
+      <CHOICES>
+        <CHOICE>Secret</CHOICE>
+        <CHOICE>Not Secret</CHOICE>      
+    </CHOICES>
+    </Field>
+  </pnp:SiteFields>
+  <pnp:ContentTypes>
+    <pnp:ContentType ID="0x0100BC04AD00F0F645FD80F68B20FE53D257" Name="Important Doc CT" Description="Important Document Content Type " Group="Impotant D CT">
+      <pnp:FieldRefs>
+        <!-- SA_DocumentType -->
+       
+        <pnp:FieldRef ID="{CA74B1D1-5BB5-4433-ADAA-4BE7FA81D330}" Required="true" />
+
+        <!-- SA_Owner -->
+        <pnp:FieldRef ID="{79251DA3-444D-4339-BB10-A890390AF888}" Required="true" />
+
+        <!-- SA_Secrecy-->
+        <pnp:FieldRef ID="{56E8D9F9-4EEC-4B54-BD65-63F665099358}" Required="true" />
+
+      </pnp:FieldRefs>
+
+    </pnp:ContentType>
+  </pnp:ContentTypes>
+
+  <pnp:Lists>
+
+    <pnp:ListInstance Title="Site Request"
+      
+      Description="List of Sites"
+
+      OnQuickLaunch="true"
+
+      TemplateType="100"
+
+      Url="Lists/newsitelists"
+
+
+      EnableVersioning="false"
+
+      RemoveExistingContentTypes="true"
+
+      EnableFolderCreation="0"  >
+      <pnp:ContentTypeBindings>
+
+        <pnp:ContentTypeBinding ContentTypeID="0x0100BC04AD00F0F645FD80F68B20FE53D257" Default="true"/>
+
+      </pnp:ContentTypeBindings>
+
+
+
+    </pnp:ListInstance>
+
+  </pnp:Lists>
+
+</pnp:ProvisioningTemplate>
