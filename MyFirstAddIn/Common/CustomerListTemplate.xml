@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pnp:ProvisioningTemplate ID="AssignmentStuff" Version="1.0"
+
+      xmlns:pnp="http://schemas.dev.office.com/PnP/2018/01/ProvisioningSchema">
+
+
+
+  <pnp:TermGroups>
+
+    <pnp:TermGroup Name="Elias5" ID="{602BB8AD-52AE-4707-99EB-FCD7BD97B855}">
+
+      <pnp:TermSets>
+
+        <pnp:TermSet Name="Product2" ID="{EE6BB0F5-5056-4D9A-A0C2-3C8559EEA560}" Language="1033">
+
+          <pnp:Terms>
+
+            <pnp:Term Name="Virus Protection1" ID="{0070EB28-E38A-4763-B021-75D8816F0F4E}" />
+
+            <pnp:Term Name="Spam Protection1" ID="{0BAA12AE-0414-4B32-948E-D75AC607C759}" />
+
+            <pnp:Term Name="Internet Filtering1" ID="{A31D3B19-6417-4FB3-BBEA-74461A158AB4}" />
+
+          </pnp:Terms>
+
+        </pnp:TermSet>
+
+      </pnp:TermSets>
+
+    </pnp:TermGroup>
+
+  </pnp:TermGroups>
+
+  <pnp:SiteFields>
+
+    <!--<Field ID="{5743285D-4D8B-4866-8A34-B33DDCBA5443}" Type="Note" DisplayName="Product2_0" StaticName="SA_product2Hid" Name="SA_Product2Hid"  ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+
+    <Field ID="{16C52202-6C57-45A6-9BB1-EC54BE31AC38}"
+
+           Type="TaxonomyFieldType"
+
+           DisplayName="Product2"
+
+           Name="SA_Product2"
+
+           StaticName="SA_Product2"
+
+           ShowField="Term1033"
+
+           Required="FALSE"
+
+           EnforceUniqueValues="FALSE"
+           Group="Eliass Fields" >
+
+
+      <Customization>
+
+        <ArrayOfProperty>
+
+          <Property>
+
+            <Name>SspId</Name>
+
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>TermSetId</Name>
+
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Elias5:Product2}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>TextField</Name>
+
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{5743285D-4D8B-4866-8A34-B33DDCBA5443}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>IsPathRendered</Name>
+
+            <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>IsKeyword</Name>
+
+            <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+
+          </Property>
+
+        </ArrayOfProperty>
+
+      </Customization>
+
+
+    </Field>-->
+    <Field ID="{F4C462F0-75B1-400D-BD1B-F400F09AA9B3}" Type="URL" Name="SA_Customerlogo1" format="Image" DisplayName="Customer Logo1"  Group="product"  />
+    <!--<Field ID="" Type="string" InternalName="SA_Address" DisplayName="Address" Group="product"  />-->
+    <Field ID="{4BE4BEB9-4F16-47B2-9985-448618DF3DEA}" Type="Text" Name="SA_Address1" DisplayName="Address1" Group="product"  />
+    <Field ID="{D93152E2-B746-404D-8C7A-55532F6DAE21}" Type="Text" Name="SA_MainContactPerson1" DisplayName="Main Contact person1" Group="product"  />
+    <Field ID="{813D7C85-F582-42E4-A599-549D2D44FD2E}" Type="Text" Name="SA_OfficePhone1" DisplayName="Office Phone1" Group="product"  />
+    <Field ID="{B111EDCA-9CDA-4CC9-9E09-42E0F1BEA03E}" Type="Text" Name="SA_MobilePhone1" DisplayName="Mobile Phone1" Group="product"  />
+    <Field ID="{B2EF71CA-E4E2-483C-94F5-2A684A72C6A4}" Type="Text" Name="SA_Email1" DisplayName="Email1"  Group="product"  />
+    <Field ID="{F97C1771-E46B-4B74-AFFE-895BFA50F933}" Type="DateTime" format ="DateOnly" Name="SA_LastContacted1" DisplayName="Last Contacted1" Group="product"  />
+    <Field ID="{1C34891A-3965-474A-9ECE-803A9208F4BD}" Type="DateTime" format="DateOnly" Name="SA_LastorderMade1" DisplayName="Last Order made1" Group="product"  />
+
+  </pnp:SiteFields>
+
+
+
+  <pnp:ContentTypes>
+
+    <pnp:ContentType ID="0x01005D3C190C5DC148B3A781C9B7E7A0FABC" Name="Customer List Test1" Description="Assignment ct" Group="Assignment Content Types">
+
+      <pnp:FieldRefs>
+
+        <!--<pnp:FieldRef ID="{16C52202-6C57-45A6-9BB1-EC54BE31AC38}" Required="true" />-->
+
+        <pnp:FieldRef ID="{F4C462F0-75B1-400D-BD1B-F400F09AA9B3}" Required="true" />
+        <pnp:FieldRef ID="{4BE4BEB9-4F16-47B2-9985-448618DF3DEA}" Required="true" />
+        <pnp:FieldRef ID="{D93152E2-B746-404D-8C7A-55532F6DAE21}" Required="true" />
+        <pnp:FieldRef ID="{813D7C85-F582-42E4-A599-549D2D44FD2E}" Required="true" />
+        <pnp:FieldRef ID="{B111EDCA-9CDA-4CC9-9E09-42E0F1BEA03E}" Required="true" />
+        <pnp:FieldRef ID="{B2EF71CA-E4E2-483C-94F5-2A684A72C6A4}" Required="false" />
+        <pnp:FieldRef ID="{F97C1771-E46B-4B74-AFFE-895BFA50F933}" Required="true" />
+        <pnp:FieldRef ID="{1C34891A-3965-474A-9ECE-803A9208F4BD}" Required="true" />
+
+      </pnp:FieldRefs>
+
+    </pnp:ContentType>
+
+  </pnp:ContentTypes>
+
+
+
+  <pnp:Lists>
+
+    <pnp:ListInstance Title="Customer List Test"
+
+                Description="List of Customers"
+
+                OnQuickLaunch="true"
+
+                TemplateType="100"
+
+                Url="Lists/customerlisttest"
+
+                EnableVersioning="false"
+
+                RemoveExistingContentTypes="true"
+
+                EnableFolderCreation="0"  >
+
+      <pnp:ContentTypeBindings>
+
+        <pnp:ContentTypeBinding ContentTypeID="0x01005D3C190C5DC148B3A781C9B7E7A0FABC" Default="true"/>
+
+      </pnp:ContentTypeBindings>
+
+      <!--<pnp:Views RemoveExistingViews="true">
+
+        <View Name="{F45F6003-55D1-49D7-9CAE-2C24D8A75DFD}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/David/Lists/SuperHeros/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=44" >
+
+          <Query>
+
+            <OrderBy>
+
+              <FieldRef Name="ID" />
+
+            </OrderBy>
+
+          </Query>
+
+          <ViewFields>
+
+            <FieldRef Name="LinkTitle" />
+
+            <FieldRef Name="SA_Product1" />
+            <FieldRef Name="SA_Customerlogo" />
+            <FieldRef Name="SA_Address" />
+            <FieldRef Name="SA_MainContactPerson" />
+            <FieldRef Name="SA_OfficePhone" />
+            <FieldRef Name="SA_MobilePhone" />
+            <FieldRef Name="SA_Email" />
+            <FieldRef Name="SA_LastContacted" />
+            <FieldRef Name="SA_lastOrderMade" />
+
+
+          </ViewFields>
+
+          <RowLimit Paged="TRUE">30</RowLimit>
+
+          <JSLink>clienttemplates.js</JSLink>
+
+          <XslLink Default="TRUE">main.xsl</XslLink>
+
+          <Toolbar Type="Standard"/>
+
+        </View>
+
+      </pnp:Views>-->
+
+    </pnp:ListInstance>
+
+  </pnp:Lists>
+
+
+
+
+
+</pnp:ProvisioningTemplate>

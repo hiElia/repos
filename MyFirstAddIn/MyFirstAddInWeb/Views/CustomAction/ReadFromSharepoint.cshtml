@@ -1,0 +1,85 @@
+﻿@using MyFirstAddInWeb.HelperModel.Models;
+@model CustomerList
+
+@{
+    ViewBag.Title = "ReadFromSharepoint";
+}
+
+
+<h1>Customer Card </h1>
+@*<div class="col-sm-5">*@
+
+<form>
+    <div class="col-sm-5">
+        <div class="form-group">
+            <label><img src="@Model.CustomerLogo" alt="@Model.CustomerLogo" style="width:100px;height:100px;"></label>
+        </div>
+        <div>
+            <label>Title</label>-------------------------------------------------- -<label>@Model.Title</label>
+        </div>        
+            <div>
+                <label>Email</label>----------------------------- --------------------<label>@Model.Email</label>
+            </div>
+            <div>
+                <label>Address</label>--------------------------------------------- <label>@Model.Address</label>
+            </div>
+            <div>
+                <label>Main Contact person</label>----- ------------------------<label>@Model.MainContactperson</label>
+            </div>
+            <div>
+                <label>Office phone</label>--------------------------------------- <label>@Model.OfficePhone</label>
+            </div>
+            <div>
+                <label>Mobile Phone</label>----- -------------------------------- <label>@Model.MobilePhone</label>
+            </div>
+            <div>
+                <label>Last Contacted Date</label>---------------------------- <label>@Model.LastContacted</label>
+            </div>
+            <div>
+                <label>Last Order Date</label>-----------------------------------<label>@Model.LastOrderDate</label>
+            </div>
+        </div>
+
+</form>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+
+    <div class="col-sm-5">
+        <div class="boxed">
+            <form style="background-color:gray">                
+                <h1 style="text-decoration-color:blue;">Order Card</h1>
+            </form>
+            <form style="background-color:ButtonHighlight">
+                @foreach (OrderList order in Model.Orders)
+    {
+
+
+            <div>Title--------------------------------------@order.Title</div>
+            <div>Cutstomer Name---------------------@order.Customer</div>
+            <div>Amount----------------------------------@order.Amount</div>
+            <div>Product----------------------------------@order.Product</div>
+}
+            </form>
+        </div>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("CreateNewOrder", "Create", "CreateNewOrder", new { customerId = Model.ID, ListId = ViewBag.ListId }, null)</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

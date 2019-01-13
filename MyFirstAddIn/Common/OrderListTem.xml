@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pnp:ProvisioningTemplate ID="AssignmentStuff1" Version="1.0"
+
+      xmlns:pnp="http://schemas.dev.office.com/PnP/2018/01/ProvisioningSchema">
+
+
+  <pnp:SiteFields>
+    <Field ID="{C1D6917E-7769-4EC5-A16C-8080D4468928}"
+
+          Group="Elis columns"
+
+          Required="FALSE"
+
+          StaticName="SA_Customeer"
+
+          Type="Lookup"
+           
+           Default="None"
+
+          Name="SA_Customeer"
+
+          DisplayName="Customer"
+
+          List="Lists/Customeers"
+
+          ShowField="Title" />
+
+    <Field ID="{0422FEBE-E21B-42BD-8C18-3FDFF91D051B}" Type="Note" DisplayName="Product3_0" StaticName="SA_product3Hid" Name="SA_Product3Hid"  ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+
+    <Field ID="{7BBAD1D9-088A-4A47-A8EA-98E35988CF01}"
+
+           Type="TaxonomyFieldType"
+
+           DisplayName="Product3"
+
+           Name="SAA_Product3"
+
+           StaticName="SAA_Product3"
+
+           ShowField="Term1033"
+
+           Required="FALSE"
+
+           EnforceUniqueValues="FALSE"
+           Group="Elis columns" >
+
+
+      <Customization>
+
+        <ArrayOfProperty>
+
+          <Property>
+
+            <Name>SspId</Name>
+
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{sitecollectiontermstoreid}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>TermSetId</Name>
+
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{termsetid:Elias5:Product2}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>TextField</Name>
+
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{0422FEBE-E21B-42BD-8C18-3FDFF91D051B}</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>IsPathRendered</Name>
+
+            <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+
+          </Property>
+
+          <Property>
+
+            <Name>IsKeyword</Name>
+
+            <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+
+          </Property>
+
+        </ArrayOfProperty>
+
+      </Customization>
+
+
+    </Field>
+    <Field ID="{6B034EA8-3AFF-41AC-AEEA-8A1CE2ED3F3B}" Type="Number" InternalName="SA_Amount2"  DisplayName="Amount2"  Group="Elis columns"  />
+
+  </pnp:SiteFields>
+
+
+
+  <pnp:ContentTypes>
+
+    <pnp:ContentType ID="0x010025A2B88E5849412DA597FC9E5655550F" Name="OrderListNew" Description="Assignment ct" Group="Assignment Content Types1">
+
+      <pnp:FieldRefs>
+        <!-- SA_Customeer -->
+
+        <pnp:FieldRef ID="{C1D6917E-7769-4EC5-A16C-8080D4468928}" Required="true" />
+        <!-- SAA_Product3 -->
+
+        <pnp:FieldRef ID="{7BBAD1D9-088A-4A47-A8EA-98E35988CF01}" Required="true" />
+       
+        <!-- SA_Amount2 -->
+        <pnp:FieldRef ID="{6B034EA8-3AFF-41AC-AEEA-8A1CE2ED3F3B}" Required="true" />
+        //396496c6-40ab-46a0-9ffb-3f902b9fa5d8
+
+
+
+
+      </pnp:FieldRefs>
+
+    </pnp:ContentType>
+
+  </pnp:ContentTypes>
+  <pnp:Lists>
+    <pnp:ListInstance Title="OrderListss"
+           
+                      Description="List of Customeers"
+
+                OnQuickLaunch="true"
+
+                TemplateType="100"
+
+                Url="Lists/OrderListss"              
+                
+
+                EnableVersioning="false"
+
+                RemoveExistingContentTypes="true"
+
+                EnableFolderCreation="0"  >
+
+      <pnp:ContentTypeBindings>
+
+        <pnp:ContentTypeBinding ContentTypeID="0x010025A2B88E5849412DA597FC9E5655550F" Default="true"/>
+
+      </pnp:ContentTypeBindings>
+
+     
+    </pnp:ListInstance>
+    
+    
+    
+    
+  </pnp:Lists>
+
+
+  <!--<pnp:Lists>
+
+    <pnp:ListInstance Title="Customeers"
+
+                Description="List of Customers"
+
+                OnQuickLaunch="true"
+
+                TemplateType="100"
+
+                Url="Lists/Customeers"
+                
+                
+                
+
+                EnableVersioning="false"
+
+                RemoveExistingContentTypes="true"
+
+                EnableFolderCreation="0"  >
+
+      <pnp:ContentTypeBindings>
+
+        <pnp:ContentTypeBinding ContentTypeID="0x010041E8C2F63EA741D8-A06915C59FB2E902" Default="true"/>
+
+      </pnp:ContentTypeBindings>
+
+     
+    </pnp:ListInstance>
+
+  </pnp:Lists>-->
+
+
+
+
+
+</pnp:ProvisioningTemplate>

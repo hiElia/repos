@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SharePoint.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,37 @@ namespace MyFirstAddInWeb.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        [SharePointContextFilter]
+        public ActionResult Index(string listid, int?ItemId)
         {
+           // User spUser = null;
+
+            var spContext = SharePointContextProvider.Current.GetSharePointContext(HttpContext);
+
+            using (ClientContext ctx = spContext.CreateUserClientContextForSPHost())
+            {
+                //if (ctx != null)
+                //{
+                //    List list = ctx.Web.GetListById(listid.ToGuid());
+                //    ListItem item = list.GetItemById(ItemId.Value);
+                //    ctx.Load(item);
+                //    ctx.ExecuteQuery();
+                   
+                    
+                //    //ctx.Web.Title = "Elias first Add-in";
+                //    //ctx.Web.Update();
+                //    //ctx.ExecuteQuery();
+                //    //spUser = ctx.Web.CurrentUser;
+                    
+
+                //    //ctx.Load(spUser, user => user.Title);
+
+                //    //ctx.ExecuteQuery();
+
+                //    //ViewBag.UserName = spUser.Title;
+                //}
+            }
+
             return View();
         }
 
