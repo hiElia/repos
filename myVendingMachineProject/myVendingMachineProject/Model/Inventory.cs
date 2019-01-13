@@ -26,11 +26,11 @@ namespace myVendingMachineProject.Model
 
             Slist = new List<Snack>();
             Snack Chips = new Snack("Chips", 3);
-            Snack Checolate = new Snack("Checolate", 4);
-            Snack protienbar = new Snack("Protein Bar", 5);
+            Snack Snickers = new Snack("Snickers", 4);
+            Snack Protienbar = new Snack("Protein Bar", 5);
             Slist.Add(Chips);
-            Slist.Add(Checolate);
-            Slist.Add(protienbar);
+            Slist.Add(Snickers);
+            Slist.Add(Protienbar);
 
 
         }
@@ -44,43 +44,37 @@ namespace myVendingMachineProject.Model
             {
                 Console.WriteLine($"{item._Name}:\nPrice for small:{item._Small} $\nPrice for medium:{item._Medium} $\nPrice for large:{item._Large} $\n");
             }
-            //foreach (Snack item in Slist)
-            //{
-            //    Console.WriteLine($"Name: {item.Name}\n Size: Price: {item.Price}");
-
-            //}
-            //foreach (Beverage item in Blist)
-            //{
-            //    Console.WriteLine($"Name: {item.Name}\n Size: Small{item._Small}, Medium{item._Medium}, Large{item._Large}");
-            //}
-
+          
 
 
         }
         public void Buydrink(string name, int size)
         {
             int price = 0;
-           // Beverage obj = bList.FirstOrDefault(x => x.Name.ToLower() == name);
-            Beverage obj= Blist.FirstOrDefault(x => x._Name.ToLower() == name);
+           
+            Beverage Blobj= Blist.FirstOrDefault(x => x._Name.ToLower() == name);
             if (size == 1)
             {
-                price = obj._Small;
+                price = Blobj._Small;
+                Console.ReadKey();
                 Pricelist.Add(price);
-                PurchaseItemString += $"{obj.Name}";
+                PurchaseItemString += $"{ Blobj.Name}";
             }
             else if(size == 2)
             {
 
-                price = obj._Medium;
+                price = Blobj._Medium;
+                Console.ReadKey();
                 Pricelist.Add(price);
-                PurchaseItemString += $"{obj._Medium}";
+                PurchaseItemString += $"{ Blobj._Medium}";
 
             }
             else if (size == 3)
             {
-                price = obj._Large;
+                price = Blobj._Large;
+                Console.ReadKey();
                 Pricelist.Add(price);
-                PurchaseItemString += $"{obj.Name}";
+                PurchaseItemString += $"{ Blobj.Name}";
 
 
             }
@@ -89,9 +83,13 @@ namespace myVendingMachineProject.Model
                 Console.WriteLine("error");
             }
         }
+
+      
+
+
         public void BuySnack(string name)
         {
-          Snack Slobj=  Slist.FirstOrDefault(x => x.Name.ToLower() == name);
+            Snack Slobj=  Slist.FirstOrDefault(x => x.Name.ToLower() == name);
             int price = Slobj.Price;
             Pricelist.Add(price);
             PurchaseItemString += $"{Slobj.Name}";
@@ -107,21 +105,26 @@ namespace myVendingMachineProject.Model
             foreach (int prices in Pricelist)
             {
                 Total += prices;
-            }
-            Console.WriteLine($"Your balance is {Purchaser.Wallet}\n");
-            Console.WriteLine($"Items will be purchase: {PurchaseItemString}\n Total cost for the items {Total}");
+            }           
+
+            Console.WriteLine($"Your balance is {Purchaser.Wallet}\n");            
+            Console.WriteLine($"Items will be purchase: {PurchaseItemString}\nTotal cost: {Total}$\n");
             Console.WriteLine("Confirm Purchse? 1 = Confirm 2 =cancel");
             int answer = Convert.ToInt32(Console.ReadLine());
-            if (answer==1)
+
+
+            if (answer == 1)
             {
-                Console.WriteLine("Thanks ");
+                Console.WriteLine("Thanks, welcome back ");
                 Balace = Purchaser.SpendMoney(Total);
                 PurchaseItemString = "";
+                Pricelist.Clear();
             }
             else if(answer == 2)
             {
                 Console.WriteLine("Go back to the menu");
                 PurchaseItemString = "";
+                Pricelist.Clear();
             }
             else
             {
